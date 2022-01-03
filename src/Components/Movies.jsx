@@ -12,13 +12,16 @@ export default function Movies(){
         return(
             <MoviesHolder>
                 {movies.map(movie=>
-                <Movie
-                    key={movie.imdbID}
-                    id={movie.imdbID}
-                    title={movie.Title}
-                    year={movie.Year}
-                    poster={movie.Poster}
-                />
+                
+                    <Movie
+                        key={movie.imdbID}
+                        id={movie.imdbID}
+                        title={movie.Title}
+                        year={movie.Year}
+                        poster={movie.Poster}
+                    />
+                
+                
                 )}
             </MoviesHolder>
         )
@@ -26,5 +29,10 @@ export default function Movies(){
 }
 
 const MoviesHolder = styled.div`
-    
+    display: flex;
+    width:80%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding:auto;
 `

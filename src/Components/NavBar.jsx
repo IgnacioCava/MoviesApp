@@ -27,6 +27,7 @@ export default function NavBar(){
 const Header = styled.header`
 position: fixed;
 display: flex;
+justify-content: space-around;
 left:10px;
 right:10px;
 top:0;

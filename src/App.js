@@ -10,9 +10,14 @@ function App() {
     <div className="App">
       <NavBar/>
       <div style={{marginTop:'70px'}}></div>
-      <Movies/>
+
+      <div style={{display:'flex', flexDirection:'row', justifyContent: 'space-between'}}>
+        <div style={{width:'15%', backgroundColor:'red'}}></div>
+        <Movies/>
+      </div>
       
-      <div style={{height:'3000px'}}></div>
+      
+      {/* <div style={{height:'3000px'}}></div> */}
     </div>
   );
 }
