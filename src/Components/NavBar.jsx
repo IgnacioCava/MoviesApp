@@ -28,9 +28,12 @@ const Header = styled.header`
 position: fixed;
 display: flex;
 justify-content: space-around;
-left:10px;
-right:10px;
+align-items: center;
+left:0;
+right:0;
 top:0;
-height: 50px;
-background-color: red;
+height: 100px;
+background-color: rgb(20,26,50);
+z-index: 2;
+color:white
 `

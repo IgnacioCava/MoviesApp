@@ -3,7 +3,7 @@ import { ADD_FAVORITE, REMOVE_FAVORITE, SEARCH_MOVIES, GET_DETAILS } from '../Ac
 const initialState = {
     favouriteMovies: [],
     foundMovies: [],
-    movieDetail: {}
+    movieDetail: []
 };
 
 export default function reducer(state=initialState, action){
@@ -18,7 +18,7 @@ export default function reducer(state=initialState, action){
             return {...state, foundMovies: action.payload.Search}
 
         case GET_DETAILS:
-            return {...state, movieDetail: action.payload}
+            return {...state, movieDetail: state.movieDetail.concat(action.payload)}
     
         default:
             return state
