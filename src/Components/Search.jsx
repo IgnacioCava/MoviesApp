@@ -8,9 +8,6 @@ export default function Search(){
 
     const dispatch = useDispatch()
     const [searchedTitle, Searched] = useState('')
-    
-    var f=useSelector(state=>state.foundMovies)
-    console.log(f)
 
     return(
         <div>

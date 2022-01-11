@@ -19,7 +19,7 @@ export function removeFavorite(payload){
 
 export function searchMovies(movieTitle){
     return function(dispatch){
-        return fetch("http://www.omdbapi.com/?apikey=5933eda1&s=" + movieTitle)
+        return fetch(`https://api.themoviedb.org/3/search/movie?api_key=3d1c074dea2be22b3b559603f3bf6a82&language=en-US&query=${movieTitle}&page=1&include_adult=true`)
         .then(response => response.json())
         .then(json =>{
             dispatch({
@@ -32,7 +32,7 @@ export function searchMovies(movieTitle){
 
 export function getDetails(id){
     return function(dispatch){
-        return fetch("http://www.omdbapi.com/?apikey=5933eda1&i=" + id)//Busca por id, puedo cambiarlo más adelante. Ver documentación de OMDb
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=3d1c074dea2be22b3b559603f3bf6a82&language=en-US`)
         .then(response => response.json())
         .then(json =>{
             dispatch({

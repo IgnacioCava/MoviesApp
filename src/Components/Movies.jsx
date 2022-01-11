@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Movie from './Movie'
 import styled from 'styled-components'
@@ -9,43 +8,44 @@ export default function Movies(){
     let movies=useSelector(state=>state.foundMovies)
     console.log(movies)
 
-    
-    
-    if(movies){
+    // window.addEventListener('load', e=>{
+    //     console.log('loaded')
+    // })
+
+    if(movies.length){
         return(
-            <MoviesHolder>
+            <MoviesHolder id='holder'>
                 {movies.map(movie=>
                 
                     <Movie
-                        key={movie.imdbID}
-                        id={movie.imdbID}
-                        title={movie.Title}
-                        year={movie.Year}
-                        poster={movie.Poster}
+                        key={movie.id}
+                        id={movie.id}
+                        title={movie.original_title}
+                        poster={movie.poster_path}
+                        plot={movie.overview}
+                        rating={movie.vote_average}
                     />
-                
                 
                 )}
             </MoviesHolder>
         )
-    } else return <NoMovies>No se encontraron peliculas</NoMovies>
-            
+    }
+    return <NoMovies>No se encontraron peliculas</NoMovies>
+    
 }
 
 const MoviesHolder = styled.div`
     display: flex;
-    width:80%;
+    width:100%;
     height:100%;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: stretch;
     padding:auto;
+    transition: .5s;
 `
 
 const NoMovies = styled.div`
-/* position: absolute;
-right:0;
-left:0; */
     margin:auto;
     margin-top: 10%;
     color:white;

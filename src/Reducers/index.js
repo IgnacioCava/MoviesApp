@@ -15,7 +15,7 @@ export default function reducer(state=initialState, action){
             return {...state, favouriteMovies: state.favouriteMovies.filter(movie=>movie.id!==action.payload)}
 
         case SEARCH_MOVIES:
-            return {...state, foundMovies: action.payload.Search}
+            return {...state, foundMovies: action.payload.results}
 
         case GET_DETAILS:
             return {...state, movieDetail: state.movieDetail.concat(action.payload)}
